@@ -27,9 +27,10 @@ class IvaWebView < Sinatra::Base
   end
 
   get '/mostrar_fechas' do
-
-
-    dates = get_dates
+    request_url = api_url("fechas")
+    result = HTTParty.get(request_url)
+    dates = JSON.parse(result)
+    logger.info dates
     '<ul>
       <li>' + "Ultimo dia de IVA es: #{dates[0]} </li>
       <li>" + "Ultimo dia de pago a cuenta es: #{dates[1]} </li>
