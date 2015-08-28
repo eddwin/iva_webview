@@ -23,7 +23,7 @@ class IvaWebView < Sinatra::Base
 
 
   get '/' do
-    "Hello There :)"
+    haml :index
   end
 
   get '/mostrar_fechas' do
