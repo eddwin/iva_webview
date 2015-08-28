@@ -8,9 +8,19 @@ class IvaWebView < Sinatra::Base
     register Sinatra::Flash
     use Rack::MethodOverride
 
-    configure :production, :development do
+  configure :production, :development do
       enable :logging
+  end
+
+  API_BASE_URI = 'https://iva-api.herokuapp.com/'
+  API_VER = '/api/v1/'
+
+  helpers do
+    def api_url(resource)
+        URI.join(API_BASE_URI, API_VER, resource).to_s
     end
+  end
+
 
   get '/' do
     "Hello There :)"
