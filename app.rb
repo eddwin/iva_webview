@@ -33,7 +33,7 @@ class IvaWebView < Sinatra::Base
     logger.info dates
     '<ul>
       <li>' + "Ultimo dia de IVA es: #{dates[0]} </li>
-      <li>" + "Ultimo dia de pago a cuenta es: #{dates[1]} </li>
+      <li>" + "Ultimo dia de pago a cuenta es: #{dates[2]} </li>
       </ul>"
   end
 
